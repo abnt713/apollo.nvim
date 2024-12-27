@@ -27,11 +27,14 @@ end
 
 local function setup()
 	require('lazy').setup({
-		spec = { import = 'plugins'}
+		spec = { import = 'plugins'},
+		ui = {
+			border = 'rounded'
+		}
 	})
 end
 
-function M.load(ctx)
+function M.load()
 	set_leaders()
 	bootstrap()
 	setup()
