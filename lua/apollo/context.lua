@@ -10,6 +10,14 @@ local settings = {
 			commit = '<leader>gc',
 			blame = '<leader>gb'
 		}
+	},
+	telescope = {
+		mappings = {
+			files = '<leader>ff',
+			grep = '<leader>fg',
+			buffers = '<leader>fb',
+			explorer = '<leader>fe'
+		}
 	}
 }
 
