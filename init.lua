@@ -1,9 +1,7 @@
 local function main()
-	-- Retrieving the editor context.
-	local ctx = require('apollo.context')
-
-	-- Loading editor settings.
-	require('apollo.editor').load(ctx)
+	-- Loading modules.
+	require('apollo.editor').load()
+	require('apollo.lazy').load()
 end
 
 main()
