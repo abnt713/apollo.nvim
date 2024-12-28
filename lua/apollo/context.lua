@@ -1,4 +1,9 @@
 local settings = {
+  colorizer = {
+    mappings = {
+      colorize = '<leader>cc'
+    }
+  },
   editor = {
     colorcolumn = '80',
     indent_size = 4,
