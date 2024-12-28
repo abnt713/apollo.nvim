@@ -74,7 +74,7 @@ return {
       },
     }
 
-    require("mason-nvim-dap").setup()
+    require("mason-nvim-dap").setup({ automatic_installation = true })
 
     local keymap = vim.api.nvim_set_keymap
     local mapdefaults = { noremap = true }
