@@ -1,7 +1,24 @@
+local dapleader = "\\"
+
+local dapkey = function(combo)
+  return dapleader .. combo
+end
+
 local settings = {
   colorizer = {
     mappings = {
       colorize = '<leader>cc'
+    }
+  },
+  dap = {
+    gotags = '',
+    mappings = {
+      continue = dapkey('c'),
+      open_repl = dapkey('r'),
+      breakpoint = dapkey('b'),
+      conditional_breakpoint = dapkey('<s-b>'),
+      list_breakpoints = dapkey('l'),
+      hover_widget = dapkey('h'),
     }
   },
   editor = {
