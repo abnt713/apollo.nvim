@@ -18,6 +18,17 @@ local settings = {
 			buffers = '<leader>fb',
 			explorer = '<leader>fe'
 		}
+	},
+	treesitter = {
+		ensure_installed = {
+			'go',
+			'lua',
+			'json',
+			'markdown',
+			'python',
+			'c',
+			'cpp',
+		}
 	}
 }
 
