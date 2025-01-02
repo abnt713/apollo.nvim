@@ -18,16 +18,16 @@ return {
     -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
     -- See the full "keymap" documentation for information on defining your own keymap.
     keymap = {
-	    preset = 'none',
-	    ['<Tab>'] = { 'select_next', 'fallback' },
-	    ['<S-Tab>'] = { 'select_prev', 'fallback' },
-	    ['<CR>'] = { 'accept', 'fallback' },
-	    cmdline = {
-		    preset = 'none',
-		    ['<Tab>'] = { 'select_next', 'fallback' },
-		    ['<S-Tab>'] = { 'select_prev', 'fallback' },
-		    ['<S-CR>'] = { 'accept', 'fallback' },
-	    }
+      preset = 'none',
+      ['<Tab>'] = { 'select_next', 'fallback' },
+      ['<S-Tab>'] = { 'select_prev', 'fallback' },
+      ['<CR>'] = { 'accept', 'fallback' },
+      cmdline = {
+        preset = 'none',
+        ['<Tab>'] = { 'select_next', 'fallback' },
+        ['<S-Tab>'] = { 'select_prev', 'fallback' },
+        ['<S-CR>'] = { 'accept', 'fallback' },
+      }
     },
 
     appearance = {
@@ -45,6 +45,12 @@ return {
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
     },
+    signature = {
+      enabled = true,
+    },
+    completion = {
+      accept = { auto_brackets = { enabled = false }, },
+    }
   },
   opts_extend = { "sources.default" }
 }
