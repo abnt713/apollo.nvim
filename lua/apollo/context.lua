@@ -33,6 +33,11 @@ local settings = {
       blame = '<leader>gb'
     }
   },
+  goimpl = {
+    mappings = {
+      show_impl = '<leader>gi'
+    }
+  },
   lsp = {
     gopls = {
       tags = ''
