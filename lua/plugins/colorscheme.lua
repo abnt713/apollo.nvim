@@ -1,10 +1,10 @@
 return {
-  "rafamadriz/neon",
+  "Shatur/neovim-ayu",
   lazy = false,
   priority = 1000,
   config = function()
-	  vim.g.neon_style = 'dark'
-	  vim.cmd([[colorscheme neon]])
+    vim.o.background = 'dark'
+    vim.cmd 'colorscheme ayu-dark'
   end,
   opts = {},
 }

@@ -5,7 +5,7 @@ return {
   opts = {
     ensure_installed = settings.ensure_installed,
     highlight = {
-      enabled = true,
+      enable = true,
       is_supported = function()
         local longline = vim.fn.strwidth(vim.fn.getline('.')) > 300
         if longline then
@@ -18,5 +18,6 @@ return {
         return true
       end
     }
-  }
+  },
+  main = 'nvim-treesitter.configs'
 }
