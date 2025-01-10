@@ -82,7 +82,7 @@ local settings = {
   }
 }
 
-local ctx = false
+local ctx
 
 local function init_context()
   return {
