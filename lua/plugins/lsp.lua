@@ -40,7 +40,9 @@ return {
     }
   },
   config = function(_, opts)
-    local cfg = require('apollo.context').settings.lsp
+    local settings = require('apollo.context').settings
+    local cfg = settings.lsp
+
     local handlers = bordered_handlers()
     require('mason-lspconfig').setup { automatic_installation = true }
 
@@ -52,8 +54,9 @@ return {
       config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
       config.handlers = handlers
 
-      if server == 'gopls' and cfg.gopls.tags ~= '' then
-        local gotags_flag = '-tags=' .. cfg.gopls.tags
+      local gotags = settings.general.go.tags
+      if server == 'gopls' and gotags ~= '' then
+        local gotags_flag = '-tags=' .. gotags
         config.settings.gopls.buildFlags = { gotags_flag }
         config.settings.gopls.env = {
           GOFLAGS = gotags_flag

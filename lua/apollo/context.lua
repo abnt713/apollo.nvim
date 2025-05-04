@@ -5,13 +5,17 @@ local dapkey = function(combo)
 end
 
 local settings = {
+  general = {
+    go = {
+      tags = ''
+    }
+  },
   colorizer = {
     mappings = {
       colorize = '<leader>cc'
     }
   },
   dap = {
-    gotags = '',
     mappings = {
       continue = dapkey('c'),
       open_repl = dapkey('r'),
@@ -39,9 +43,6 @@ local settings = {
     }
   },
   lsp = {
-    gopls = {
-      tags = ''
-    },
     mappings = {
       code_action = 'ga',
       hover_symbol = 'gh',
@@ -60,6 +61,11 @@ local settings = {
   },
   mason = {
     border = 'rounded'
+  },
+  nonels = {
+    mappings = {
+      toggle_revive = 'gq'
+    }
   },
   telescope = {
     mappings = {

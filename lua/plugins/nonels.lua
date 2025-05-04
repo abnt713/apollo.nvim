@@ -22,6 +22,9 @@ local function apply_revive_fix()
   })
 end
 
+local settings = require('apollo.context').settings
+local cfg = settings.nonels
+
 return {
   "nvimtools/none-ls.nvim",
   dependencies = {
@@ -31,9 +34,22 @@ return {
   config = function()
     local null_ls = require('null-ls')
 
-    -- local keymap = vim.api.nvim_set_keymap
-    -- local mapdefaults = { noremap = true }
-    -- keymap('n', cfg.map.toggle_revive, "<cmd>lua require('null-ls').toggle({name = 'revive'})<CR>", mapdefaults)
+    local keymap = vim.api.nvim_set_keymap
+    local mapdefaults = { noremap = true }
+    keymap('n', cfg.mappings.toggle_revive, "<cmd>lua require('null-ls').toggle({name = 'revive'})<CR>", mapdefaults)
+
+    -- local revive_args = {
+    --   "-formatter",
+    --   "json",
+    -- }
+
+    -- local gotags = settings.general.go.tags
+    -- if gotags ~= '' then
+    --   table.insert(revive_args, "-tags")
+    --   table.insert(revive_args, gotags)
+    -- end
+
+    -- table.insert(revive_args, "./...")
 
     require('null-ls').setup {
       sources = {

@@ -1,7 +1,8 @@
-local cfg = require('apollo.context').settings.dap
+local settings = require('apollo.context').settings
+local cfg = settings.dap
 
 local function go_adapter()
-  local gotags_flag = '-tags=' .. cfg.gotags
+  local gotags_flag = '-tags=' .. settings.general.go.tags
   return {
     {
       type = 'delve',
@@ -9,6 +10,7 @@ local function go_adapter()
       request = "launch",
       program = "${file}",
       buildFlags = gotags_flag,
+      outputMode = 'remote',
     },
     {
       type = 'delve',
@@ -40,6 +42,7 @@ local function go_adapter()
       mode = "test",
       program = "./${relativeFileDirname}",
       buildFlags = gotags_flag,
+      outputMode = 'remote',
     },
     -- {
     --   type = 'delve',
@@ -67,7 +70,7 @@ return {
       port = "${port}",
       executable = {
         command = "dlv",
-        args = { "dap", "-l", "127.0.0.1:${port}" },
+        args = { "dap", "-l", "127.0.0.1:${port}", '--log', '--log-output=dap,debugger' },
       },
       options = {
         initialize_timeout_sec = 20,

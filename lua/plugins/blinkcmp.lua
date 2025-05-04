@@ -53,6 +53,14 @@ return {
     },
     completion = {
       accept = { auto_brackets = { enabled = false }, },
+      list = {
+        selection = {
+          preselect = function(ctx) return not require('blink.cmp').snippet_active({ direction = 1 }) end
+        },
+      },
+      -- trigger = {
+      --   show_in_snippet = false
+      -- }
     }
   },
   opts_extend = { "sources.default" }

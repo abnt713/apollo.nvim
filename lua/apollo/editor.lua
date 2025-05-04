@@ -23,7 +23,7 @@ local function apply_neovide()
   vim.g.neovide_cursor_animate_command_line = false
 
   -- Mouse
-  vim.g.neovide_hide_mouse_when_typing = true
+  vim.g.neovide_hide_mouse_when_typing = false
 end
 
 M.load = function()
