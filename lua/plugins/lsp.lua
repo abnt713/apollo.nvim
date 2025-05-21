@@ -1,22 +1,10 @@
-local function bordered_handlers()
-  local border = 'rounded'
-  return {
-    ["textDocument/hover"] = vim.lsp.with(
-      vim.lsp.handlers.hover, { border = border }
-    ),
-    ["textDocument/signatureHelp"] = vim.lsp.with(
-      vim.lsp.handlers.signature_help, { border = border }
-    ),
-  }
-end
-
 return {
   'neovim/nvim-lspconfig',
   dependencies = {
     'williamboman/mason.nvim',
-    'williamboman/mason-lspconfig.nvim',
     'saghen/blink.cmp'
   },
+  commit = "83a5d191780d7a47916c16e37c2ed29bf7f7c637",
   opts = {
     servers = {
       lua_ls = {
@@ -43,8 +31,25 @@ return {
     local settings = require('apollo.context').settings
     local cfg = settings.lsp
 
-    local handlers = bordered_handlers()
-    require('mason-lspconfig').setup { automatic_installation = true }
+    -- local _border = "rounded"
+
+    -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+    --   vim.lsp.handlers.hover, {
+    --     border = _border
+    --   }
+    -- )
+
+    -- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+    --   vim.lsp.handlers.signature_help, {
+    --     border = _border
+    --   }
+    -- )
+    -- vim.diagnostic.config({
+    --   virtual_text = {
+    --     prefix = '■ ', -- Could be '●', '▎', 'x', '■', , 
+    --   },
+    --   float = { border = _border },
+    -- })
 
     local lspconfig = require('lspconfig')
 
@@ -52,7 +57,7 @@ return {
       -- passing config.capabilities to blink.cmp merges with the capabilities in your
       -- `opts[server].capabilities, if you've defined it
       config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
-      config.handlers = handlers
+      -- config.handlers = handlers
 
       local gotags = settings.general.go.tags
       if server == 'gopls' and gotags ~= '' then

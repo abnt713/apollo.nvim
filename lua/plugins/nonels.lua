@@ -31,6 +31,7 @@ return {
     'williamboman/mason.nvim',
     'jay-babu/mason-null-ls.nvim'
   },
+  priority = -1,
   config = function()
     local null_ls = require('null-ls')
 

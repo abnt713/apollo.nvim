@@ -35,6 +35,7 @@ M.load = function()
   vim.wo.signcolumn = 'yes'
   vim.wo.cursorline = settings.cursorline
   vim.opt.colorcolumn = settings.colorcolumn
+  vim.o.winborder = 'single'
 
   -- Indentation
   vim.bo.shiftwidth = settings.indent_size

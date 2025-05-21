@@ -7,6 +7,7 @@ return {
   },
   opts = {
     defaults = {
+      border = false,
       layout_strategy = "flex",
       layout_config = {
         horizontal = { preview_cutoff = 80, preview_width = 0.55 },
@@ -29,7 +30,7 @@ return {
     local mapdefaults = { noremap = true }
 
     local mappings = cfg.mappings
-    keymap('n', mappings.files, "<cmd>Telescope find_files<CR>", mapdefaults)
+    keymap('n', mappings.files, "<cmd>Telescope find_files no_ignore=true<CR>", mapdefaults)
     keymap('n', mappings.grep, "<cmd>Telescope live_grep<CR>", mapdefaults)
     keymap('n', mappings.buffers, "<cmd>Telescope buffers<CR>", mapdefaults)
     keymap('n', mappings.explorer, "<cmd>Telescope file_browser path=%:p:h cwd_to_path=true<CR>", mapdefaults)
