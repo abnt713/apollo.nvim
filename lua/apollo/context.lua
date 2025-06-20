@@ -67,6 +67,11 @@ local settings = {
       toggle_revive = 'gq'
     }
   },
+  octo = {
+    mappings = {
+      builtin = '<leader>o',
+    }
+  },
   telescope = {
     mappings = {
       files = '<leader>ff',
